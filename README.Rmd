@@ -1,0 +1,22 @@
+---
+title: "README"
+output: html_document
+---
+==================================================================
+Human Activity Recognition Using Smartphones Dataset
+==================================================================
+
+This readme file is part of creating Tidy dataset from the Samsung Smartphones Dataset. This explains the script that was used to create the tidy dataset.
+
+The script takes all unzipped files from the directories, test and train. It reads them and loads into appropriate objects. Then the main datasets, X_test and X_train are merged. The coloumn names that were available in the features file were assigned to the merged dataset. We need the dataset that has only the mean and std variables. So they rest are excluded from the dataset by subsetting.
+
+We take the Activity and Subject datasets from the respective files, merged them separately for test and train sets, and remerged them with the main dataset. After that, the actual column names were renamed Activity and Subject.
+
+The Activity column has factor variables, the actual labels for those levels were included in the Activity label file. So those column values are replaced by the appropriate labels. Now we have a nice dataset with desired columns and rows. By using dplyr function, the dataset is grouped by Subject and Activity, and also computed the averages of each column. The output is the desired tidy data processed from the Samsung Smartphones Dataset.
+
+The following files are also included:
+=========================================
+
+- run_analysis.R - Script file used to create the tidy dataset
+
+- codebook.txt - code book describing the variables in the tidy dataset
